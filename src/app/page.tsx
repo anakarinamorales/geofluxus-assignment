@@ -28,7 +28,7 @@ const Home = function Home() {
       <Layout>
         <Content>
           <Container noBorderBottom paddingSize='lg'>
-            <Flex vertical>
+            <Flex gap='var(--spacing-8)' vertical>
               <Title level={2}>Bekijk rapport</Title>
               <p>
                 Selecteer een rapport dat je wilt verkennen voor een dieper
