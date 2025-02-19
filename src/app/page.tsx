@@ -26,14 +26,33 @@ const menuItems = [
   { label: 'Name Lastname' },
 ] as ItemType[];
 
+enum REPORT_OPTS {
+  AFVAL = 'afval',
+  BENCHMARK = 'benchmark',
+  CSRD = 'csrd',
+}
+
 const reportOptions = [
-  { value: 'afval', label: 'Afval rapport' },
-  { value: 'benchmark', label: 'Benchmark rapport' },
-  { value: 'csrd', label: 'CSRD rapport' },
+  { value: REPORT_OPTS.AFVAL, label: 'Afval rapport' },
+  { value: REPORT_OPTS.BENCHMARK, label: 'Benchmark rapport' },
+  { value: REPORT_OPTS.CSRD, label: 'CSRD rapport' },
 ];
+
+type FormValues = {
+  reportType: REPORT_OPTS.AFVAL | REPORT_OPTS.BENCHMARK | REPORT_OPTS.CSRD;
+};
 
 const Home = function Home() {
   const { Paragraph, Title } = Typography;
+  const [form] = Form.useForm();
+
+  const onFinish = (values: FormValues) => {
+    alert(values.reportType);
+  };
+
+  const handleChange = () => {
+    form.submit(); // Manually triggers the form submission
+  };
 
   return withTheme(
     <Layout>
@@ -57,21 +76,28 @@ const Home = function Home() {
           </DashboardSection>
           <DashboardSection>
             <Flex vertical>
-              <Form layout='vertical'>
-                <Form.Item label='Rapporttype' labelAlign='left'>
+              <Form
+                form={form}
+                key='report-form'
+                layout='vertical'
+                onFinish={onFinish}
+              >
+                <Form.Item
+                  label='Rapporttype'
+                  labelAlign='left'
+                  name='reportType'
+                >
                   <Select
-                    placeholder='Selecteer een rapporttype'
+                    onChange={handleChange}
                     options={reportOptions}
+                    placeholder='Selecteer een rapporttype'
                     size='large'
-                    onSelect={(value: string) => {
-                      console.log(value);
-                    }}
                   />
                 </Form.Item>
               </Form>
             </Flex>
           </DashboardSection>
-          <DashboardSection theme="grey1">
+          <DashboardSection theme='grey1'>
             <Flex vertical>
               <Paragraph type='secondary'>
                 Er zijn momenteel geen rapporten geselecteerd. Kies een rapport

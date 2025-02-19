@@ -40,4 +40,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## TO DO
 - Change Select font style to match design
+- Change Text font style to match design (p, span)
 
