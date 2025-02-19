@@ -37,6 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Personal notes
 - Some colors on the design have no consistency (primary texts with different colors across pages). So, I picked just one and I'm using across the whole app. One color 
 - What's the hover color of the select item element?
+- No consistent gap between report items in the layout. I'm using the most often used gap value for this app.
 
 ## TO DO
 - Change Select font style to match design

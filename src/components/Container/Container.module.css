@@ -2,17 +2,25 @@
     border: 1px solid var(--color-border);
     margin: auto;
     max-width: var(--content-max-width-desktop);
+}
+
+.container.noBorderBottom {
+    border-bottom-color: transparent;
+}
+
+.container.noBorderTop {
+    border-top-color: transparent;
+}
+
+.container.paddingLG {
     padding: 32px;
 }
 
-.container:first-child {
-    border-bottom: 0;
+.container.paddingMD {
+    padding: 24px;
 }
 
-.container:last-child {
-    border-top: 0;
-}
-
+/* Container theme styles */
 .light {
     background-color: var(--color-white);
 }

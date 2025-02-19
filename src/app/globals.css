@@ -4,13 +4,13 @@
 
   /* Colors */
   --color-primary: #152bee;
-  
+
   --color-background: #f7faff;
   --color-blue: #080f5e;
   --color-border: #eaecf0;
-  --color-fill-primary: #F9FAFB;
-  --color-fill-secondary: #FCFCFD;
-  --color-fill-tertiary: #F2F4F7;
+  --color-fill-primary: #f9fafb;
+  --color-fill-secondary: #fcfcfd;
+  --color-fill-tertiary: #f2f4f7;
   --color-foreground: #eaecf0;
   --color-highlight-primary: #f0f6ff;
   --color-input-box-shadow: rgba(24, 144, 255, 0.2);
@@ -19,7 +19,6 @@
   --color-text-primary: #373f41;
   --color-text-secondary: #475467;
   --color-white: #ffffff;
-
 
   /* Effects */
   --config-border: 1px solid var(--color-border);
@@ -42,6 +41,9 @@
   --font-weight-400: 400;
   --font-weight-500: 500;
   --font-weight-700: 700;
+
+  --padding-md: var(--spacing-24);
+  --pading-lg: var(--spacing-32);
 }
 
 * {
@@ -56,12 +58,19 @@ body {
   overflow-x: hidden;
 }
 
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
+h1:first-letter,
+h2:first-letter,
+h3:first-letter,
+h4:first-letter,
+h5:first-letter,
+h6:first-letter {
+  text-transform: capitalize;
+}
 
 label {
   font-weight: var(--font-weight-500);
