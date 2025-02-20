@@ -1,24 +1,25 @@
 'use client';
+import { useState } from 'react';
 import { Flex, Form, Layout, Select, Typography } from 'antd';
 import { Content } from 'antd/es/layout/layout';
 import Container from '@/components/Container';
 import Report from '@/components/Report';
 import {
-    REPORT_OPTS,
+    REPORT_TYPES,
     ReportFormValues,
-    reportOptions,
+    selectReportOptions,
 } from '@/utils/constants';
 
-const { Text } = Typography;
+const { Text, Title } = Typography;
 
 import withTheme from '../../theme';
 
 const Home = function Home() {
-    const { Title } = Typography;
     const [form] = Form.useForm();
-
+    const [currentReportType, setCurrentReportType] =
+        useState<REPORT_TYPES | null>();
     const onFinish = (values: ReportFormValues) => {
-        alert(values.reportType);
+        setCurrentReportType(values.reportType);
     };
 
     const handleChange = () => {
@@ -43,7 +44,6 @@ const Home = function Home() {
                         <Flex vertical>
                             <Form
                                 form={form}
-                                key='report-form'
                                 layout='vertical'
                                 onFinish={onFinish}
                             >
@@ -54,7 +54,7 @@ const Home = function Home() {
                                 >
                                     <Select
                                         onChange={handleChange}
-                                        options={reportOptions}
+                                        options={selectReportOptions}
                                         placeholder='Selecteer een rapporttype'
                                         size='large'
                                     />
@@ -62,7 +62,7 @@ const Home = function Home() {
                             </Form>
                         </Flex>
                     </Container>
-                    <Report type={REPORT_OPTS.AFVAL} />
+                    <Report type={currentReportType as REPORT_TYPES} />
                 </Content>
             </Layout>
         </Layout>

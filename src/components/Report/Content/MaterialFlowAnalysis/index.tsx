@@ -3,28 +3,22 @@ import { Typography } from 'antd';
 import Container from '@/components/Container';
 const { Title, Text } = Typography;
 
-export default function MaterialFlowAnalysis() {
+import type { MaterialFlowAnalysisData } from '@/components/Report/types';
+
+export default function MaterialFlowAnalysis({
+    data,
+}: {
+    data: MaterialFlowAnalysisData;
+}) {
     return (
         <Container>
             <Flex gap='var(--spacing-16)' vertical>
-                <Title level={4}>Materialen</Title>
-                <Text className='tertiaryText'>
-                    De Rijksoverheid heeft plannen voor de transitie naar een
-                    circulaire economie geformuleerd in 5 transitieagenda&apos;s
-                    (TA&apos;s) die verschillende economische sectoren en ketens
-                    behelzen: 1) Biomassa en Voedsel, 2) Kunststof, 3)
-                    Maakindustrie, 4) Bouw, 5) Consumptiegoederen.
-                </Text>
-                <Text className='tertiaryText'>
-                    In vergelijking met 2019 zijn de afvalstromen in de TAs
-                    Biomassa & Voedsel en Consumptiegoederen licht gedaald,
-                    daarentegen zijn de TAs &apos;onbekend&apos; en Bouw
-                    toegenomen. Hoewel de biomassa- en voedselsectoren klein
-                    lijken in vergelijking met de anderen, genereren ze
-                    aanzienlijke negatieve effecten op het gebied van
-                    landgebruik, broeikasgasemissies en degradatie van land en
-                    water.
-                </Text>
+                <Title level={4}>{data?.title}</Title>
+                {data?.description?.map((paragraph) => (
+                    <Text className='tertiaryText' key={paragraph}>
+                        {paragraph}
+                    </Text>
+                ))}
             </Flex>
         </Container>
     );

@@ -1,5 +1,5 @@
-import { REPORT_OPTS } from "@/utils/constants";
+import { REPORT_TYPES } from '@/utils/constants';
 
 export type FormValues = {
-  reportType: REPORT_OPTS.AFVAL | REPORT_OPTS.BENCHMARK | REPORT_OPTS.CSRD;
+    reportType: REPORT_TYPES.AFVAL | REPORT_TYPES.BENCHMARK | REPORT_TYPES.CSRD;
 };

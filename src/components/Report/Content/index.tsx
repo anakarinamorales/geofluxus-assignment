@@ -1,11 +1,43 @@
 import { Flex } from 'antd';
 import { Typography } from 'antd';
-import TrendInsights from './TrendInsights';
-import ProcessingEffectiveness from './ProcessingEffectiveness';
+import { ANALYSIS_TYPES, REPORT_TYPES } from '@/utils/constants';
+import getReportData from '@/utils/api';
 import MaterialFlowAnalysis from './MaterialFlowAnalysis';
+import ProcessingEffectiveness from './ProcessingEffectiveness';
+import TrendInsights from './TrendInsights';
+
+import type {
+    EffectivenessAnalysisData,
+    MaterialFlowAnalysisData,
+    ReportData,
+    TrendingAnalysis,
+} from '@/components/Report/types';
+import { useEffect, useState } from 'react';
+
 const { Paragraph, Title, Text } = Typography;
 
-export default function Content({ type }: { type?: string }) {
+export default function Content({ type }: { type?: REPORT_TYPES }) {
+    const [reportData, setReportData] = useState<ReportData>(
+        () => ({} as ReportData)
+    );
+
+    const trendInsightsData = reportData?.analysis?.[
+        ANALYSIS_TYPES.TRENDS
+    ] as TrendingAnalysis;
+    const benchmarkData = reportData?.analysis?.[
+        ANALYSIS_TYPES.WASTE_PROCESSING_VS_NATIONAL
+    ] as unknown as EffectivenessAnalysisData;
+    const materialsData = reportData?.analysis?.[
+        ANALYSIS_TYPES.MATERIALS
+    ] as MaterialFlowAnalysisData;
+
+    useEffect(() => {
+        const data = getReportData(type);
+        if (type) {
+            setReportData(data);
+        }
+    }, [type]);
+
     return (
         <>
             {!type && (
@@ -18,17 +50,13 @@ export default function Content({ type }: { type?: string }) {
             {type && (
                 <>
                     <Flex gap='var(--spacing-16)' vertical>
-                        <Title level={4}>{type} rapport</Title>
+                        <Title level={4}>{reportData?.title} rapport</Title>
                         <Text className='secondaryText'>
-                            In dit afval rapport vindt u een overzicht van alle
-                            afvalstromen, de bijbehorende hoeveelheden afval en
-                            de gebruikte verwerkingsmethodes. Daarnaast wordt
-                            aangegeven wie het afval heeft verwerkt en welke
-                            materialen er in het afval aanwezig zijn.
+                            {reportData?.description}
                         </Text>
-                        <TrendInsights />
-                        <ProcessingEffectiveness />
-                        <MaterialFlowAnalysis />
+                        <TrendInsights data={trendInsightsData} />
+                        <ProcessingEffectiveness data={benchmarkData} />
+                        <MaterialFlowAnalysis data={materialsData} />
                     </Flex>
                 </>
             )}

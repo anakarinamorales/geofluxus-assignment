@@ -1,8 +1,8 @@
-import { Flex, Table } from 'antd';
-import { Typography } from 'antd';
+import { Flex, Table, Typography } from 'antd';
 import { Header } from 'antd/es/layout/layout';
 import Container from '@/components/Container';
 import type { TableColumnsType } from 'antd';
+import type { EffectivenessAnalysisData } from '@/components/Report/types';
 
 import styles from './ProcessingEffectiveness.module.css';
 
@@ -65,29 +65,19 @@ export const dataSource = [
 
 const { Title, Text } = Typography;
 
-export default function ProcessingEffectiveness() {
+export default function ProcessingEffectiveness({
+    data,
+}: {
+    data: EffectivenessAnalysisData;
+}) {
     return (
         <Container>
             <Flex gap='var(--spacing-16)' vertical>
-                <Title level={4}>
-                    Afvalverwerking in vergelijking met landelijke praktijken
-                </Title>
-                <Text className='tertiaryText'>
-                    In de onderstaande tabel analyseren we de toegepaste
-                    verwerkingsmethoden per afvalsoort en vergelijken we deze
-                    met de meest gebruikte methoden op nationaal niveau. Hierbij
-                    categoriseren we elke verwerkingsmethode als beter, gelijk
-                    aan, of minder effectief dan de landelijke standaard. Indien
-                    de verwerkingsmethode onbekend is, wordt deze apart vermeld.
-                    Dit biedt inzicht in hoe onze verwerkingspraktijken zich
-                    verhouden tot de gangbare methoden en waar mogelijke
-                    verbeterpunten liggen.
-                </Text>
+                <Title level={4}>{data?.title}</Title>
+                <Text className='tertiaryText'>{data?.description}</Text>
                 <Flex className={styles.innerContent} vertical>
                     <Header className={styles.secondary}>
-                        08 - Afval van bereiding, formulering, levering en
-                        gebruik (BFLG) van coatings (verf, lak en email), lijm,
-                        kit en drukinkt
+                        {`${data?.analysis?.['08'].id} - ${data?.analysis?.['08'].title}`}
                     </Header>
                     <Table
                         columns={analysisTablecolumns}
