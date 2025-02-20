@@ -1,14 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`ant-design/ant-design-examples`](https://github.com/ant-design/ant-design-examples).
+# Introduction
+
+This is a code assignment using NextJS, TypeScript, Ant Design and the default ESLint rules from NextJS.
+
+The app is a dahsboard that shows some data based on a select option.
+
+# Behaviour/design choices I've made
+
+For this assignment, I choose chose to initially have the app data as a constant. For that, I created a data type that matches what I found in the design. [This](https://github.com/anakarinamorales/geofluxus-assignment/blob/develop/src/utils/constants.ts#L50) is the current structure.
+
+I also built a simple express server that works as an API endpoint, but I didn't plug it to the app in this version.
+
+I choose to use as much as I could from Ant Design features and components. For that, I have a theme file that changes the Layout componet to be as in the design - I had to use some rules with ` !important` , but I kept them as minimal as possible for our own safety (and sanity).
+
+Since I also had available the designs for the full report dashboard, I tried to prepare most of my current components to work with the full report version. They'll need some tweaks, but most of it will be just getting the remaining data and showing it in the component.
+
+Now, about some design choices: some things on the design had no consistency (primary texts with different colors across pages, no consistent gap between report items). So, I'm I took the liberty an picked the most common occourence for each style for each type of element and used it across the whole app to keep (we like consistency).
+
+# Running the project
 
 ## Getting Started
 
-First install de depencencies:
+Navigate to the repository folder and install the dependencies. You need to have node installed.
 
 ```bash
+cd geofluxus-assignment
 npm i
 ```
 
-Then, run the development server:
+Now run the dev server.
 
 ```bash
 npm run dev
@@ -16,33 +35,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## TODO
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Personal notes
-
--   Some colors on the design have no consistency (primary texts with different colors across pages). So, I'm picking one for each type of component and using across the whole app to keep it consistent.
--   What's the hover color of the select item element?
--   No consistent gap between report items in the layout. I'm using the most often used gap value for this app.
--   Inner section titles are not consistent throughout the design (I'm taking into consideration the ful report design here), so I choose to keep the titles without the numbers before them, so it's consistent in all pages.
-
-## TO DO
-
--   Change Select font style to match design
--   Change Text font style using the Layout compnent
+-   [ ] Change Select font style to match design
+-   [ ] Change Text font style using the Layout component
+-   [ ] Use pages router insted of app router, otherwhise we need to have ` use client` on our page because of ` ant design` package.
+-   [ ] Add tests
+-   [ ] Use report data from express server inside ` server` folder - or test ` msw` for that instead.
