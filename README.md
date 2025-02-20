@@ -6,7 +6,7 @@ The app is a dahsboard that shows some data based on a select option.
 
 # Behaviour/design choices I've made
 
-For this assignment, I choose chose to initially have the app data as a constant. For that, I created a data type that matches what I found in the design. [This](https://github.com/anakarinamorales/geofluxus-assignment/blob/develop/src/utils/constants.ts#L50) is the current structure.
+For this assignment, I choose to initially have the app data as a constant. For that, I created a data type that matches what I found in the design. [This](https://github.com/anakarinamorales/geofluxus-assignment/blob/develop/src/utils/constants.ts#L50) is the current structure.
 
 I also built a simple express server that works as an API endpoint, but I didn't plug it to the app in this version.
 
@@ -14,7 +14,7 @@ I choose to use as much as I could from Ant Design features and components. For 
 
 Since I also had available the designs for the full report dashboard, I tried to prepare most of my current components to work with the full report version. They'll need some tweaks, but most of it will be just getting the remaining data and showing it in the component.
 
-Now, about some design choices: some things on the design had no consistency (primary texts with different colors across pages, no consistent gap between report items). So, I'm I took the liberty an picked the most common occourence for each style for each type of element and used it across the whole app to keep (we like consistency).
+Now, about some design choices: some things on the design had no consistency (primary texts with different colors across pages, no consistent gap between report items). So, I took the liberty and picked the most common occurrence of each style for each type of element and used it across the app (we like consistency).
 
 # Running the project
 
