@@ -1,0 +1,16 @@
+{
+    "name": "reports-server",
+    "version": "1.0.0",
+    "description": "A simple express server that serves waste data for the app",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "type": "module",
+    "author": "Ana Karina M. Machado",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1"
+    }
+}
