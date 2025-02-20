@@ -1,66 +1,73 @@
 :root {
-  /* Sizes */
-  --content-max-width-desktop: 1280px;
+    /* Sizes */
+    --content-max-width-desktop: 1280px;
 
-  /* Colors */
-  --color-primary: #152bee;
+    /* Colors */
+    --color-primary: #152bee;
 
-  --color-background: #f7faff;
-  --color-blue: #080f5e;
-  --color-border: #eaecf0;
-  --color-fill-primary: #f9fafb;
-  --color-fill-secondary: #fcfcfd;
-  --color-fill-tertiary: #f2f4f7;
-  --color-foreground: #eaecf0;
-  --color-highlight-primary: #f0f6ff;
-  --color-input-box-shadow: rgba(24, 144, 255, 0.2);
-  --color-text-heading: #1d2939;
-  --color-text-placeholder: #98a2b3;
-  --color-text-primary: #373f41;
-  --color-text-secondary: #475467;
-  --color-white: #ffffff;
+    --color-background: #f7faff;
+    --color-blue: #080f5e;
+    --color-border: #eaecf0;
+    --color-fill-primary: #f9fafb;
+    --color-fill-secondary: #fcfcfd;
+    --color-fill-tertiary: #f2f4f7;
+    --color-foreground: #eaecf0;
+    --color-highlight-primary: #f0f6ff;
+    --color-input-box-shadow: rgba(24, 144, 255, 0.2);
+    --color-table-text: #667085;
+    --color-text-heading: #1d2939;
+    --color-text-placeholder: #98a2b3;
+    --color-text-primary: #373f41;
+    --color-text-secondary: #475467;
+    --color-white: #ffffff;
 
-  /* Effects */
-  --config-border: 1px solid var(--color-border);
-  --box-shadow: 0px 9px 28px 8px #0000000d, 0px 3px 6px -4px #0000001f,
-    0px 6px 16px 0px #00000014;
+    /* Effects */
+    --config-border: 1px solid var(--color-border);
+    --box-shadow: 0px 9px 28px 8px #0000000d, 0px 3px 6px -4px #0000001f,
+        0px 6px 16px 0px #00000014;
 
-  /* Spacing */
-  --spacing-4: 4px;
-  --spacing-8: 8px;
-  --spacing-12: 12px;
-  --spacing-16: 16px;
-  --spacing-20: 20px;
-  --spacing-24: 24px;
-  --spacing-28: 28px;
-  --spacing-32: 32px;
-  --spacing-80: 80px;
+    /* Spacing */
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-12: 12px;
+    --spacing-16: 16px;
+    --spacing-20: 20px;
+    --spacing-24: 24px;
+    --spacing-28: 28px;
+    --spacing-32: 32px;
+    --spacing-80: 80px;
 
-  /* font */
-  --font-weight-100: 100;
-  --font-weight-400: 400;
-  --font-weight-500: 500;
-  --font-weight-700: 700;
+    /* font */
+    --font-primary: var(--font-roboto), sans-serif;
+    --font-size-table-content-small: 14px;
+    --font-size-table-header-small: 12px;
+    --font-size-text-primary: 20px;
+    --font-size-text-secondary: 16px;
+    --font-size-text-tertiary: 14px;
+    --font-weight-100: 100;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-700: 700;
 
-  --padding-md: var(--spacing-24);
-  --pading-lg: var(--spacing-32);
+    --padding-md: var(--spacing-24);
+    --pading-lg: var(--spacing-32);
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 h1:first-letter,
@@ -69,10 +76,23 @@ h3:first-letter,
 h4:first-letter,
 h5:first-letter,
 h6:first-letter {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 label {
-  font-weight: var(--font-weight-500);
-  line-height: 24px;
+    font-weight: var(--font-weight-500);
+    line-height: 24px;
+}
+
+/* TO DO: Check if there's a way to add this styling through layout configuration */
+.primaryText {
+    font-size: var(--font-size-text-primary) !important;
+}
+
+.secondaryText {
+    font-size: var(--font-size-text-secondary) !important;
+}
+
+.tertiaryText {
+    font-size: var(--font-size-text-tertiary) !important;
 }

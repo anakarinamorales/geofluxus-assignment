@@ -1,0 +1,46 @@
+.secondary {
+    background-color: var(--color-fill-tertiary) !important;
+    padding: var(--spacing-8) var(--spacing-16) !important;
+}
+
+.innerContent {
+    border-radius: 2px;
+    border: 1px solid var(--color-border);
+}
+
+/* Overriding table styles that are not possible to configure through antd ConfigProvider */
+.borderlessTable :global(.ant-table) {
+    background-color: var(--color-fill-secondary) !important;
+}
+
+.borderlessTable :global(.ant-table-container) {
+    padding: var(--spacing-16) var(--spacing-16) var(--spacing-8) !important;
+}
+
+.borderlessTable :global(.ant-table-thead) {
+    border: none;
+    font-family: var(--font-roboto), sans-serif;
+    font-size: var(--font-size-table-header-small);
+    font-weight: var(--font-weight-400) !important;
+    letter-spacing: 0%;
+    line-height: 14px;
+}
+
+.borderlessTable :global(.ant-table-cell) {
+    border: none !important;
+    font-weight: var(--font-weight-400) !important;
+    padding: 0 !important;
+}
+
+.borderlessTable :global(th.ant-table-cell) {
+    font-size: var(--font-size-table-header-small) !important;
+    line-height: 12px;
+    padding-bottom: 4px !important;
+}
+
+.borderlessTable :global(td.ant-table-cell) {
+    color: var(--color-table-text);
+    font-size: var(--font-size-table-content-small);
+    line-height: 22px;
+    padding-bottom: var(--spacing-8) !important;
+}
