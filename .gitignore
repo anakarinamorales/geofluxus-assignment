@@ -37,3 +37,10 @@ next-env.d.ts
 yarn.lock
 
 /server/node_modules
+
+# cypress examples
+cypress/e2e/2-advanced-examples
+cypress/fixtures/example.json
+cypress/support
+
+/.vscode/
