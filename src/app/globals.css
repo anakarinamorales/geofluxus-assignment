@@ -39,6 +39,13 @@
 
     /* font */
     --font-primary: var(--font-roboto), sans-serif;
+
+    /* Text */
+    --font-size-h1: 38px;
+    --font-size-h2: 30px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+    --font-size-h5: 16px;
     --font-size-table-content-small: 14px;
     --font-size-table-header-small: 12px;
     --font-size-text-primary: 20px;

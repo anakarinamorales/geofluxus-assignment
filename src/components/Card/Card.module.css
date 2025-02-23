@@ -1,0 +1,16 @@
+.customCard {
+    flex: 0 0 330px;
+}
+.customCard :global(.ant-card-body) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+}
+
+.grey:global(.ant-card) {
+    background-color: var(--color-fill-primary);
+}
+
+.deault:global(.ant-card) {
+    background-color: var(--color-white);
+}

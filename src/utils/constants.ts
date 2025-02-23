@@ -30,6 +30,13 @@ export enum CONTAINER_THEMES {
     GREY3,
 }
 
+export enum CARD_THEMES {
+    DEFAULT,
+    GREY,
+}
+
+// DATA
+
 // Menu items
 export const menuItems = [
     { label: 'GEOFLUXUS' },

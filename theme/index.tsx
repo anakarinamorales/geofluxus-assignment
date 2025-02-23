@@ -17,12 +17,20 @@ export default function withTheme(node: React.ReactNode) {
                     fontSize: 16,
                     fontSizeHeading1: 38,
                     fontSizeHeading2: 30,
+                    fontSizeHeading3: 24,
                     fontSizeHeading4: 20,
-                    lineHeightHeading1: 1.2,
-                    lineHeightHeading2: 1.2,
-                    lineHeightHeading4: 1.4,
+                    fontSizeHeading5: 16,
+                    lineHeightHeading1: 46 / 38,
+                    lineHeightHeading2: 38 / 30,
+                    lineHeightHeading3: 32 / 24,
+                    lineHeightHeading4: 28 / 20,
+                    lineHeightHeading5: 24 / 16,
                 },
                 components: {
+                    Card: {
+                        bodyPadding: 24,
+                        bodyPaddingSM: 16,
+                    },
                     Form: {
                         labelColor: 'var(--color-primary)',
                         labelFontSize: 16,
