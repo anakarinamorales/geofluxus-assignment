@@ -11,6 +11,10 @@
     background-color: var(--color-fill-primary);
 }
 
-.deault:global(.ant-card) {
+.default:global(.ant-card) {
     background-color: var(--color-white);
+}
+
+:global(.ant-card .ant-card-body).large {
+    padding: 32px;
 }

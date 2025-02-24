@@ -11,29 +11,27 @@ import '@ant-design/v5-patch-for-react-19';
 import './globals.css';
 
 const roboto = Roboto({
-  preload: true,
-  subsets: ['latin'],
-  variable: '--font-roboto',
-  weight: ['100', '400', '500', '700'],
+    preload: true,
+    subsets: ['latin'],
+    variable: '--font-roboto',
+    weight: ['100', '400', '500', '700'],
 });
 
 export const metadata = {
-  title: 'geoFluxus',
-  description: 'Generic description for SEO',
+    title: 'geoFluxus',
+    description: 'Generic description for SEO',
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang='en'>
-      <body
-        className={roboto.variable}
-      >
-        <AntdRegistry>{children}</AntdRegistry>
-      </body>
-    </html>
-  );
+    return (
+        <html lang='en'>
+            <body className={roboto.variable}>
+                <AntdRegistry>{children}</AntdRegistry>
+            </body>
+        </html>
+    );
 }
