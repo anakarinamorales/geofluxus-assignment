@@ -78,6 +78,7 @@ main {
     display: flex;
     flex-direction: column;
     max-width: var(--content-max-width-desktop);
+    width: 100%;
 }
 
 a {
@@ -95,6 +96,7 @@ label {
 .ant-layout {
     min-height: 100% !important;
     align-items: center;
+    width: 100%;
 }
 
 .primaryText {

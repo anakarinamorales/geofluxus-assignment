@@ -15,6 +15,6 @@
     background-color: var(--color-white);
 }
 
-:global(.ant-card .ant-card-body).large {
-    padding: 32px;
+.large :global(.ant-card .ant-card-body) {
+    padding: var(--spacing-32);
 }

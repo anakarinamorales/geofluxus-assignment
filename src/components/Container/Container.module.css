@@ -18,7 +18,7 @@
 }
 
 .paddingLG {
-    padding: 32px;
+    padding: var(--spacing-32);
 }
 
 .paddingMD {

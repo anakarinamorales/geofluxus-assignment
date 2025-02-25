@@ -30,7 +30,6 @@ const Home = function Home() {
         <Layout>
             <Layout>
                 <Content>
-                    {/* <Container noBorderBottom paddingSize='lg'> */}
                     <Flex gap='var(--spacing-8)' vertical component={Card}>
                         <Title level={2}>Bekijk rapport</Title>
                         <Text className='primaryText'>
@@ -39,8 +38,6 @@ const Home = function Home() {
                             organisatie.
                         </Text>
                     </Flex>
-                    {/* </Container> */}
-                    {/* <Container paddingSize='lg'> */}
                     <Flex vertical component={Card}>
                         <Form form={form} layout='vertical' onFinish={onFinish}>
                             <Form.Item
@@ -57,7 +54,6 @@ const Home = function Home() {
                             </Form.Item>
                         </Form>
                     </Flex>
-                    {/* </Container> */}
                     <Report type={currentReportType as REPORT_TYPES} />
                 </Content>
             </Layout>
