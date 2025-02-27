@@ -1,12 +1,14 @@
 :root {
     /* Sizes */
     --content-max-width-desktop: 1280px;
+    --size-menu-width: 311px;
 
     /* Colors */
     --color-primary: #152bee;
 
-    --color-background: #f7faff;
+    --color-background: #f8f9fd;
     --color-blue: #080f5e;
+    --color-border-blue: #cbe1fd;
     --color-border: #eaecf0;
     --color-fill-primary: #f9fafb;
     --color-fill-secondary: #fcfcfd;
@@ -27,10 +29,12 @@
         0px 6px 16px 0px #00000014;
 
     /* Spacing */
+    --spacing-2: 2px;
     --spacing-4: 4px;
     --spacing-8: 8px;
     --spacing-12: 12px;
     --spacing-16: 16px;
+    --spacing-18: 18px;
     --spacing-20: 20px;
     --spacing-24: 24px;
     --spacing-28: 28px;
@@ -75,11 +79,15 @@ body {
 }
 
 main {
+    padding: var(--spacing-24);
+}
+
+/* main {
     display: flex;
     flex-direction: column;
     max-width: var(--content-max-width-desktop);
     width: 100%;
-}
+} */
 
 a {
     color: inherit;
@@ -88,16 +96,16 @@ a {
 
 label {
     font-weight: var(--font-weight-500);
-    line-height: 24px;
+    line-height: var(--spacing-24);
 }
 
 /* TO DO: Check if there's a way to add this styling through layout configuration */
 
-.ant-layout {
+/* .ant-layout {
     min-height: 100% !important;
     align-items: center;
     width: 100%;
-}
+} */
 
 .primaryText {
     font-size: var(--font-size-text-primary) !important;

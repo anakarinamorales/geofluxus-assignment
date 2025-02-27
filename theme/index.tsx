@@ -40,7 +40,6 @@ export default function withTheme(node: React.ReactNode) {
                         headerBg: 'var(--color-white)',
                         headerColor: 'var(--color-text-heading)',
                         headerHeight: 'auto',
-                        headerPadding: 'var(--spacing-16) var(--spacing-24)',
                         siderBg: 'var(--color-blue)',
                     },
                     Menu: {
@@ -74,7 +73,20 @@ export default function withTheme(node: React.ReactNode) {
                 },
             }}
         >
-            {node}
+            <ConfigProvider
+                theme={{
+                    token: { borderRadius: 2 },
+                    components: {
+                        Layout: {
+                            siderBg: 'transparent',
+                            headerPadding:
+                                'var(--spacing-18) var(--spacing-24) var(--spacing-12) var(--spacing-24)',
+                        },
+                    },
+                }}
+            >
+                {node}
+            </ConfigProvider>
         </ConfigProvider>
     );
 }

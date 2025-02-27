@@ -1,0 +1,22 @@
+.menu {
+    height: 100%;
+    max-width: var(--size-menu-width);
+    position: fixed;
+}
+
+.main {
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.customContent {
+    margin: 0;
+}
+
+.reportingSettings {
+    border-radius: var(--spacing-2);
+    background-color: var(--color-highlight-primary);
+    border: 1px solid var(--color-border-blue);
+    height: 432px;
+    width: 100%;
+}

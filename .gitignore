@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/server/node_modules
 
 # testing
 /coverage
@@ -36,4 +37,5 @@ next-env.d.ts
 
 yarn.lock
 
-/server/node_modules
+# vscode config
+/.vscode/
